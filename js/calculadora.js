@@ -10,6 +10,10 @@ function calcular() {
 	
 	var sueldoBruto = $('#sueldoBruto').val();
 	var conyuge = $("input[name='conyuge']:checked").val();
+	
+	var familiaresComponent = document.getElementById("familiares");
+	var cantFamiliares = familiaresComponent.options[familiaresComponent.selectedIndex].value;
+	
 	var hijosComponent = document.getElementById("hijos");
 	var cantHijos = hijosComponent.options[hijosComponent.selectedIndex].value;
 	
@@ -17,13 +21,7 @@ function calcular() {
 	var sueldoNeto = sueldoBruto * 0.83;
 	var sueldoNetoAnual = sueldoNeto * 13;
 	
-	var conyugeAux = 0;
-	if(conyuge == 'Si')
-	{
-		conyugeAux = 1;
-	}
-	
-	var MNI_anual = 42318+203126+39778*conyugeAux+19889*cantHijos
+	var MNI_anual = 42318+203126+39778*cantFamiliares+19889*cantHijos
 	var MNI_mensual = MNI_anual / 13;
 	
 	var MontoImponibleAnual =  0;
