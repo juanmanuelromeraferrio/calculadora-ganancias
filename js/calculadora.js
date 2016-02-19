@@ -4,6 +4,13 @@ $(document).ready(function() {
 		calcular();
 	})
 
+	$(document).keypress(function(e) {
+	  if (e.keyCode == 13) {
+		e.preventDefault();
+		calcular();
+	  }
+	});
+
 });
 
 function calcular() {
