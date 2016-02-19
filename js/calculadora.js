@@ -6,6 +6,13 @@ $(document).ready(function() {
 
 });
 
+$(document).keypress(function(e) {
+  if (e.keyCode == 13) {
+    e.preventDefault();
+    calcular();
+  }
+});
+
 function calcular() {
 	
 	var sueldoBruto = $('#sueldoBruto').val();
@@ -109,4 +116,4 @@ function calcular() {
 	$("#sueldoEnMano").text("$" + Math.ceil(sueldoEnMano) + ".00");
 	
 	
-}
+} 
