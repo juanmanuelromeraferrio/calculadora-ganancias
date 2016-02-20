@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Calculadora Ganancias 2016 - version beta</title>
+    <title>Calculadora Ganancias 2016 - version beta 2</title>
 	
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
     <div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1 class="page-header">Calculadora Ganancias 2016 - version beta
+						<h1 class="page-header">Calculadora Ganancias 2016 - version beta 2 based on juanmanuelromeraferrio
 						<a href="https://twitter.com/_kumaaa" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_kumaaa</a>
 						</h1>
 					</div>
@@ -67,6 +67,13 @@
 												<span class="input-group-addon">.00</span>
 											</div>
                                             <p class="help-block">Ingrese su Sueldo Bruto</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="conyuge">Cónyuge
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Familiares a Cargo</label>
@@ -144,6 +151,43 @@
                 <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Deduccion</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mínimo No Imponible</td>
+                        <td>42.318</td>
+                    </tr>
+                    <tr>
+                        <td>Conyuge</td>
+                        <td>39.778</td>
+                    </tr>
+                    <tr>
+                        <td>Hijo</td>
+                        <td>19.889</td>
+                    </tr>
+                    <tr>
+                        <td>Familiar a Cargo <br/><small>(Asumo mismo monto que para hijo ya que el monto para esta deduccion no fue informado)</small></td>
+                        <td>19.889</td>
+                    </tr>
+                    <tr>
+                        <td>Adicional 4º Categoría</td>
+                        <td>203.126</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3"></div>
     </div>
 
 	<script>
