@@ -4,7 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
+ body {
     background-color: #f8f8f8;
 }
 
@@ -23,6 +23,37 @@ body {
     height: 20px;
     max-width: 150px;
 }
+
+@media ( max-width :1279px) {
+    #share .share {
+        display: block;
+        margin-bottom: 10px
+    }
+}
+@media ( max-width :768px) {
+    #share {
+        position: relative;
+        display: block;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        padding: 20px 0;
+        text-align: center
+    }
+    #share .share {
+        display: inline-block;
+        margin: 0 5px
+    }
+}
+
+@media ( max-width :480px) {
+    #share .copyright {
+        display: block;
+        margin-top: 20px
+    }
+}
+
 .copyright {
     display: inline-block;
 }
