@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Calculadora Ganancias 2016 - version beta</title>
-
+	
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -43,7 +43,9 @@
     <div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1 class="page-header">Calculadora Ganancias 2016</h1>
+						<h1 class="page-header">Calculadora Ganancias 2016 - version beta
+						<a href="https://twitter.com/_kumaaa" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_kumaaa</a>
+						</h1>
 					</div>
 					<!-- /.col-lg-12 -->
 				</div>
@@ -67,17 +69,15 @@
                                             <p class="help-block">Ingrese su Sueldo Bruto</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>Conyuge a Cargo</label>
-												<div class="radio">
-													<label> <input type="radio" name="conyuge" id="No"
-    															value="No" checked>No
-    												</label>
-    												</div>
-    												<div class="radio">
-    												<label> <input type="radio" name="conyuge" id="Si"
-    															value="Si">Si
-    												</label>
-    												</div>
+                                            <label>Familiares a Cargo</label>
+                                            <select class="form-control" id="familiares">
+												<option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+												<option>4</option>
+												<option>5</option>
+                                            </select>
     									</div>
                                         <div class="form-group">
                                             <label>Cantidad de Hijos</label>
@@ -88,6 +88,9 @@
                                                 <option>3</option>
 												<option>4</option>
 												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
                                             </select>
                                         </div>
 										<div class="form-group" align="right">
@@ -143,6 +146,21 @@
             <!-- /.row -->
     </div>
 
+	<script>
+	
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-74040569-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -156,7 +174,7 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 	
 	<script src="../js/calculadora.js"></script>
-
+		
 </body>
 
 </html>
