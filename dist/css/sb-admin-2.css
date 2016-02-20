@@ -8,6 +8,45 @@ body {
     background-color: #f8f8f8;
 }
 
+
+#share {
+    position: fixed;
+    top: 20px;
+    right: 90px;
+    z-index: 1;
+}
+
+#share .share {
+    vertical-align: top;
+    display: inline-block;
+    overflow: hidden;
+    height: 20px;
+    max-width: 150px;
+}
+.copyright {
+    display: inline-block;
+}
+
+.copyright a {
+    color: #00ff95;
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+.fondo-copyright {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 12px;
+    vertical-align: top;
+    color: #fff;
+    background: #161324;
+    background: rgba(0,0,0,0.5);
+    border-radius: 2px;
+}
+
 #wrapper {
     width: 100%;
 }
