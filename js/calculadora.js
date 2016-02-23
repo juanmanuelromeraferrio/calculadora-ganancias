@@ -23,6 +23,7 @@ var ADICIONAL_4TA_CATEGORIA = 203126;
 var CONYUGE = 39778;
 var HIJO = 19889;
 var FAMILIAR_A_CARGO = 19889;
+var TOPE_APORTES = 9529.89
 
 function calcular() {
 	
@@ -36,7 +37,13 @@ function calcular() {
 	var cantHijos = hijosComponent.options[hijosComponent.selectedIndex].value;
 	
 	
-	var sueldoNeto = sueldoBruto * 0.83;
+	var sueldoNeto = 0;
+
+	if( sueldoBruto*0.17 > TOPE_APORTES){
+		sueldoNeto = sueldoBruto - TOPE_APORTES;
+	}else{
+		sueldoNeto = sueldoBruto * 0.83;
+	}
 	var sueldoNetoAnual = sueldoNeto * 13;
 	
 	var MNI_anual = MINIMO_NO_IMPONIBLE+ADICIONAL_4TA_CATEGORIA+CONYUGE*conyuge+HIJO*cantHijos+FAMILIAR_A_CARGO*cantFamiliares;
@@ -73,7 +80,7 @@ function calcular() {
 	var impuestoMensual = impuestoAnual / 13;
 	$("#impuestoMensual").text("$" + Math.ceil(impuestoMensual) + ".00");
 
-	var alicuota = (impuestoMensual / sueldoNeto)*100;
+	var alicuota = (impuestoMensual / sueldoBruto)*100;
 	$("#alicuota").text(alicuota.toFixed(2) + "%");
 
 	var sueldoEnMano = sueldoNeto - impuestoMensual;
