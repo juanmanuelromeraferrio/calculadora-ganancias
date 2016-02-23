@@ -75,16 +75,17 @@ function calcular() {
 	{
 	  impuestoAnual =  impuestoAnual + totalEscalas[i];
 	}
-	$("#impuestoAnual").text("$" + Math.ceil(impuestoAnual) + ".00");
+	impuestoAnual = impuestoAnual.toFixed(2);
+	$("#impuestoAnual").text("$" + impuestoAnual);
 
-	var impuestoMensual = impuestoAnual / 13;
-	$("#impuestoMensual").text("$" + Math.ceil(impuestoMensual) + ".00");
+	var impuestoMensual = (impuestoAnual / 13).toFixed(2);
+	$("#impuestoMensual").text("$" + impuestoMensual);
 
 	var alicuota = (impuestoMensual / sueldoBruto)*100;
 	$("#alicuota").text(alicuota.toFixed(2) + "%");
 
 	var sueldoEnMano = sueldoNeto - impuestoMensual;
-	$("#sueldoEnMano").text("$" + Math.ceil(sueldoEnMano) + ".00");
+	$("#sueldoEnMano").text("$" + Math.round(sueldoEnMano) + ".00");
 	
 	
 }
