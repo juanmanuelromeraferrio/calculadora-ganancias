@@ -1,95 +1,135 @@
 /* Main Style */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 body {
-  background-color: #f8f8f8;
+  background-color: white;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  animation: all ease-in-out .3s;
-  -webkit-animation: all ease-in-out .3s;
+  font-family: "Montserrat", sans-serif;
+  animation: all ease-in-out 0.3s;
+  -webkit-animation: all ease-in-out 0.3s;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 20px auto;
+  max-width: 970px;
+  width: 85%;
 }
 /* Page Header */
 .page-header {
-  margin: 40px 0 60px 0;
+  margin: 15px 0;
 }
 .page-header h1 {
   text-align: center;
 }
 
-/* Info Wrapper */
-.info-wrapper {
+/* Result Container */
+.result-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
-  grid-template-rows: auto;
-  background-color: hsl(217, 100%, 91%);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, auto);
+  grid-gap: 12px;
+  background-color: #00adef;
   border-radius: 6px;
   padding: 20px 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.info-wrapper .info-item {
+
+.result-container .info-item {
   margin: 0 auto;
-  grid-column: auto / auto;
-  grid-row: auto / auto;
+  grid-column: span 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.info-wrapper .info-item .name {
-  color: hsl(217, 40%, 65%);
+
+.result-container .info-item.main-item {
+  margin: 0 auto;
+  grid-column: span 2;
+  font-weight: bold;
 }
-.info-wrapper .info-item .value {
+
+.result-container .info-item .name {
+  color: white;
+}
+.result-container .info-item .value {
   font-size: 24px;
   font-weight: 700;
-  color: hsl(217, 50%, 40%);
+  color: white;
 }
 
 /* Form Area */
 .form-area {
-  background: hsl(0, 0%, 92%);
+  background: #f8f8f8;
   border-radius: 6px;
-  margin: 36px auto 120px auto;
-  padding: 20px 30px;
+  margin: 16px auto;
+  padding: 10px 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 form {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); 
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
   grid-gap: 12px;
+  grid-template-areas:
+    ". salary salary salary salary ."
+    "children children rent rent mortgage mortgage"
+    "marital marital retired retired patagonico patagonico"
+    ". . button button . .";
 }
 
-.full-part {
-  grid-column: 1/7
-}
-.half-part.first-column {
-  grid-column: 1/4
-}
-.half-part.second-column {
-  grid-column: 4/7
+form > div {
+  text-align: center;
+  color: #0d1e36;
+  margin: 5px 0;
 }
 
-.third-part.first-column {
-  grid-column: 1/3
+.salary {
+  grid-area: salary;
 }
-.third-part.second-column {
-  grid-column: 3/5
+
+.children {
+  grid-area: children;
 }
-.third-part.third-column {
-  grid-column: 5/7
+
+.rent {
+  grid-area: rent;
+}
+
+.mortgage {
+  grid-area: mortgage;
+}
+
+.marital {
+  grid-area: marital;
+}
+
+.retired {
+  grid-area: retired;
+}
+
+.patagonico {
+  grid-area: patagonico;
+}
+
+.button {
+  grid-area: button;
 }
 
 .radio-label {
   font-weight: 400;
 }
+
 .help-block {
-  color: hsl(217, 50%, 60%);
-  font-size: 14px;
-  font-weight: 700;
+  color: #0d1e36;
+  font-size: 12px;
+  font-weight: 500;
   margin: 4px 0 0 0;
+  text-align: left;
 }
 
-label{
+label {
   display: block;
   font-weight: 700;
   color: #333;
@@ -97,12 +137,15 @@ label{
   margin-bottom: 8px;
   margin-top: 18px;
 }
-input, select, textarea, button{
+
+input,
+select,
+textarea,
+button {
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 12px 18px;
   width: 100%;
-  box-sizing: border-box;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -110,47 +153,82 @@ input, select, textarea, button{
   border-radius: 4px;
   border: 1px solid #bbb;
   letter-spacing: 1px;
+  box-sizing: border-box;
 }
-input:focus, select:focus, textarea:focus{
-  box-shadow: 0px 0px 1px 1px hsla(146, 63%, 60%, 0.7);
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0px 0px 1px 1px #0d1e36;
   outline: 0;
 }
-input[type=radio] {
-  display: inline;
-  width:auto;
 
+input[type="radio"] {
+  display: inline;
+  width: auto;
 }
+
 button {
   margin-top: 20px;
-  background: hsl(145, 67%, 60%);
+  background: #0d1e36;
+  color: white;
   font-size: 18px;
   font-weight: 700;
   border: none;
-  box-sizing: content-box;
+  transition: 0.3s;
 }
-button:hover{
+
+button:hover {
   cursor: pointer;
-  background: hsl(145, 67%, 55%);
+  background: #1a3c6d;
 }
 
+.btn-secondary {
+  color: #fff;
+  background-color: #d9d9d9;
+  border-color: #d9d9d9;
+}
 
-@media screen and (max-width: 649px) {
-  .info-wrapper .info-item{
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #0d1e36;
+  border-color: #0d1e36;
+}
+
+@media screen and (max-width: 768px) {
+  .result-container .info-item {
     margin: 0;
   }
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
+
+  form {
+    grid-template-areas:
+      "salary salary salary salary salary salary"
+      "children children children children children children"
+      "rent rent rent rent rent rent"
+      "mortgage mortgage mortgage mortgage mortgage mortgage"
+      "marital marital marital marital marital marital"
+      "retired retired retired retired retired retired"
+      "patagonico patagonico patagonico patagonico patagonico patagonico"
+      "button button button button button button";
   }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
+
+  .result-container .info-item {
+    grid-column: span 6;
   }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
+
+  .result-container .info-item.main-item {
+    grid-row: 1 / auto;
+    grid-column: span 6;
   }
 }

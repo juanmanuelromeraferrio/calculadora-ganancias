@@ -13,6 +13,7 @@
       content="ganancias, caluladora de ganancias, calcular, sueldo, impuesto, 2019, salario, calculadora, calcular ganancias, retenciones, aportes, contribuciones"
     />
     <meta name="author" content="Juan Manuel Romera Ferrio" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -92,134 +93,187 @@
 
     <title>Calculadora Ganancias 2019</title>
 
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="../lib/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link href="../lib/css/calc.css" rel="stylesheet" />
+    <link href="../lib/css/calc.min.css" rel="stylesheet" />
   </head>
 
   <body>
     <div class="container">
       <div class="page-header">
         <h1>Calculadora Ganancias 2019</h1>
-      </div>    
-      <div class="info-wrapper">
-        <div class="info-item">
-          <p class="name">Impuesto Anual</p>
-          <p class="value" id="impuestoAnual">0,00</p>
-        </div>
-        <div class="info-item">
-            <p class="name">Impuesto Mensual</p>
-            <p class="value" id="impuestoMensual">0,00</p>
-        </div>
-        <div class="info-item">
-            <p class="name">Alicuota</p>
-            <p class="value" id="alicuota">0,00</p>
-        </div>
-        <div class="info-item">
-            <p class="name">Alicuota Marginal</p>
-            <p class="value" id="alicuotaMarginal">0,00</p>
-        </div>
-        <div class="info-item">
-            <p class="name">Sueldo en Mano</p>
-            <p class="value" id="sueldoEnMano">0,00</p>
-        </div>
-      </div>    
+      </div>
+
       <div class="form-area">
-        <form role="form"> 
-              <div class="half-part first-column">
-                <label for="sueldoBruto">Sueldo Bruto</label>
-                <!-- $ -->
-                <input type="text" name="sueldoBruto" id="sueldoBruto"/>
-                <!-- .00 -->
-                <p class="help-block">Ingrese Su Sueldo Bruto</p>     
-              </div>
-              <div class="half-part second-column">
-                <label for="hijos">Hijos Menores De 18 Años</label>
-                <select name="hijos" id="hijos">
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                </select>
-              </div>
-  
+        <form role="form">
+          <div class="salary">
+            <label for="sueldoBruto">Sueldo Bruto</label>
+            <!-- $ -->
+            <input
+              type="text"
+              name="sueldoBruto"
+              id="sueldoBruto"
+              value="0.0"
+            />
+            <!-- .00 -->
+            <p class="help-block">Ingrese su Sueldo Bruto</p>
+          </div>
+          <div class="children">
+            <label for="hijos">Hijos Menores De 18 Años</label>
+            <select name="hijos" id="hijos">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>
+          </div>
 
-              <div class="third-part first-column">
-                <label class="radio-label" for="conyuge">
-                  <input type="radio" name="conyuge" id="Si" value="1" />
-                  Soy Casado
-                </label>          
-                <label class="radio-label" for="conyuge">
-                  <input type="radio" name="conyuge" id="No" value="0" checked />
-                  No Soy Casado
-                </label>
-              </div>
-              
-              <div class="third-part second-column">
-                <label class="radio-label" for="jubilado">
-                  <input type="radio" name="jubilado" id="Si" value="1" />
-                  Soy Jubilado
-                </label>
-                <label class="radio-label" for="jubilado">
-                  <input type="radio" name="jubilado" id="No" value="0" checked />
-                  No Soy Jubilado
-                </label>
-              </div>
-  
-              <div class="third-part third-column">
-                <label class="radio-label" for="patagonico">
-                  <input type="radio" name="patagonico" id="Si" value="1" />
-                  Soy Patagónico
-                </label>
-                <label class="radio-label" for="patagonico">
-                  <input type="radio" name="patagonico" id="No" value="0" checked />
-                  No Soy Patagónico
-                </label>
-              </div>
+          <div class="rent">
+            <label for="alquiler">Deducción Alquiler</label>
+            <input id="alquiler" name="alquiler" type="text" value="0.0" />
+            <p class="help-block">
+              Ingrese su Alquiler Mensual (el 40% podrá descontarse con topes).
+            </p>
+          </div>
+          <div class="mortgage">
+            <label for="hipotecario">Deducción Hipotecario</label>
+            <input
+              id="hipotecario"
+              name="hipotecario"
+              type="text"
+              value="0.0"
+            />
+            <p class="help-block">
+              Ingrese lo que paga mensualmente en intereses
+            </p>
+          </div>
 
-
-            <div class="half-part first-column">
-              <label for="alquiler">Deducción Alquiler</label>
-              <input id="alquiler" name="alquiler" type="text" />
-              <p class="help-block">
-                Ingrese su Alquiler Mensual (el 40% podrá descontarse
-                con topes).
-              </p>
+          <div class="marital">
+            <label class="questions text-paragraph">¿Sos Casado/a?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary" for="casado">
+                <input
+                  type="radio"
+                  name="conyuge"
+                  id="Si"
+                  value="1"
+                  autocomplete="off"
+                />
+                Si
+              </label>
+              <label class="btn btn-secondary active" for="casado">
+                <input
+                  type="radio"
+                  name="conyuge"
+                  id="No"
+                  value="0"
+                  autocomplete="off"
+                  checked
+                />No
+              </label>
             </div>
-            <div class="half-part second-column">
-              <label for="hipotecario">Deducción Hipotecario</label>
-              <input id="hipotecario" name="hipotecario" type="text" />
-              <p class="help-block">
-                Ingrese lo que paga mensualmente en intereses
-              </p>
+          </div>
+
+          <div class="retired">
+            <label class="questions text-paragraph">¿Sos Jubilado/a?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary" for="jubilado">
+                <input
+                  type="radio"
+                  name="jubilado"
+                  id="Si"
+                  value="1"
+                  autocomplete="off"
+                />
+                Si
+              </label>
+              <label class="btn btn-secondary active" for="jubilado">
+                <input
+                  type="radio"
+                  name="jubilado"
+                  id="No"
+                  value="0"
+                  autocomplete="off"
+                  checked
+                />No
+              </label>
             </div>
+          </div>
 
+          <div class="patagonico">
+            <label class="questions text-paragraph">¿Sos Patagónico/a?</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary" for="patagonico">
+                <input
+                  type="radio"
+                  name="patagonico"
+                  id="Si"
+                  value="1"
+                  autocomplete="off"
+                />
+                Si
+              </label>
+              <label class="btn btn-secondary active" for="patagonico">
+                <input
+                  type="radio"
+                  name="patagonico"
+                  id="No"
+                  value="0"
+                  autocomplete="off"
+                  checked
+                />No
+              </label>
+            </div>
+          </div>
 
-          <div class="third-part second-column">
-            <button id="calcular" type="button" class="btn-submit" >
+          <div class="button">
+            <button id="calcular" type="button" class="btn-submit">
               Calcular
             </button>
           </div>
         </form>
-      </div>        
+      </div>
+
+      <div id="result" class="result-container">
+        <div class="info-item">
+          <h4 class="name">Impuesto Anual</h4>
+          <h4 class="value" id="impuestoAnual">0,00</h4>
+        </div>
+        <div class="info-item">
+          <h4 class="name">Impuesto Mensual</h4>
+          <h4 class="value" id="impuestoMensual">0,00</h4>
+        </div>
+        <div class="info-item main-item">
+          <h4 class="name">Sueldo en Mano</h4>
+          <h4 class="value" id="sueldoEnMano">0,00</h4>
+        </div>
+        <div class="info-item">
+          <h4 class="name">Alicuota</h4>
+          <h4 class="value" id="alicuota">0,00</h4>
+        </div>
+        <div class="info-item">
+          <h4 class="name">Alicuota Marginal</h4>
+          <h4 class="value" id="alicuotaMarginal">0,00</h4>
+        </div>
+      </div>
     </div>
-    
+
     <script>
       (function(i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
         (i[r] =
-        i[r] ||
-        function() {
-          (i[r].q = i[r].q || []).push(arguments);
-        }),
-        (i[r].l = 1 * new Date());
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
         (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
         a.async = 1;
         a.src = g;
@@ -235,22 +289,11 @@
       ga("send", "pageview");
     </script>
 
-    <script>
-      !(function(d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0],
-          p = /^http:/.test(d.location) ? "http" : "https";
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = p + "://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      })(document, "script", "twitter-wjs");
-    </script>
-
+    <!-- Bootstrap core JavaScript -->
+    <script defer src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="../lib/js/jquery.min.js"></script>
+    <!-- My Scripts -->
     <script src="../lib/js/calc-ganancias.min.js"></script>
     <script src="../lib/js/calc.min.js"></script>
   </body>
