@@ -1,0 +1,8 @@
+{
+  "short_name": "Ganancias",
+  "name": "Calculadora de Ganancias 2019",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "##00adef",
+  "background_color": "#edeff0"
+}
