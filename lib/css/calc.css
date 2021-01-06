@@ -59,6 +59,17 @@ body {
 }
 
 /* Form Area */
+.footer-area {
+  margin: 30px auto;
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer-area a {
+  color: #00adef;
+}
+
+/* Form Area */
 .form-area {
   background: #f8f8f8;
   border-radius: 6px;
